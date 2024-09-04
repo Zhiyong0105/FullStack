@@ -1,27 +1,17 @@
-# from database import engine, SessionLocal
-# from models import Base
-# import crud as crud
-
-from database import engine, SessionLocal
-from models import Base
-import crud as crud
+from fastapi import FastAPI
+from app.api import user_routes  
+from app.database import engine
+from app.models.models import Base
 
 
-def main():
-    # Base.metadata.create_all(bind=engine)
-    # db = SessionLocal()
-    # try:
-    #     user = crud.create_user(db, id="1234",displayed_name="pp")
-    #     if user:
-    #         print(f'User created: {user}')
-    #     else:
-    #         print('Failed to create user')
-    # except Exception as e:
-    #     print(f'An error occurred: {e}')
-    # finally:
-    #     db.close()
-    print("text")
+app = FastAPI()
+
+Base.metadata.create_all(bind=engine)
+
+app.include_router(user_routes.router)
 
 
-if __name__ == "__main__":
-    main()
+
+@app.get("/user")
+def read_root():
+    return {"message": "Welcome to the FastAPI application!"}
