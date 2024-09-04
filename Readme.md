@@ -11,6 +11,10 @@ delete `docker system prune`
 
 ls `docker exec -it <container name> bash`
 
-`docker system prune -a --volumes
-`
-`
+`docker system prune -a --volumes`
+
+`alembic init alembic`
+
+`alembic revision --autogenerate -m ""`
+
+`alembic upgrade head`

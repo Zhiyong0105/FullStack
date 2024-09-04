@@ -12,6 +12,4 @@ app.include_router(user_routes.router)
 
 
 
-@app.get("/user")
-def read_root():
-    return {"message": "Welcome to the FastAPI application!"}
+

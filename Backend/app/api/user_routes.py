@@ -14,3 +14,9 @@ router = APIRouter()
 def read_users(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
     users = crud.get_users(db, skip=skip, limit=limit)
     return users
+
+
+@router.post("/users/",response_model=schemas.User)
+def creat_user(user:schemas.UserCreate,db:Session = Depends(get_db)):
+    users = crud.creat_user(db=db,user=user)
+    return users

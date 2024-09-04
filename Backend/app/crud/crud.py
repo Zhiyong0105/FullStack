@@ -1,10 +1,18 @@
 from sqlalchemy.orm import Session
-from app.models import models
+from app.models.models import User
+from app.schemas import schemas
+from datetime import datetime, timezone
 
 
-def create_user(db: Session, id: str, displayed_name: str):
-    new_user = User(id=id, displayed_name=displayed_name)
+def creat_user(db: Session, user: schemas.UserCreate):
+    new_user = User(
+        displayed_name=user.displayed_name,
+        email=user.email,
+        created_time=datetime.now(timezone.utc),
+        updated_time=datetime.now(timezone.utc)
+
+    )
     db.add(new_user)
     db.commit()
-    db.refresh(new_user)  
+    db.refresh(new_user)
     return new_user

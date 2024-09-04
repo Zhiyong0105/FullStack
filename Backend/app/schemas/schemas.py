@@ -1,10 +1,22 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
+from datetime import datetime
 
 
-class User(BaseModel):
+
+
+class UserBase(BaseModel):
+    email: EmailStr
+    displayed_name: str
+
+
+class UserCreate(UserBase):
+    pass  # 创建用户只需要 `displayed_name`
+
+
+class User(UserBase):
     id: int
-    name: str
-    email: str
+    created_time: datetime
+    updated_time: datetime
 
     class Config:
-        orm_mode = True  # 支持从 ORM 模型转换为 Pydantic 模型
+        orm_mode = True  # 允许将 ORM 模型转换为 Pydantic 模型
