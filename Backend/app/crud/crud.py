@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 def creat_user(db: Session, user: schemas.UserCreate):
     new_user = User(
-        displayed_name=user.displayed_name,
+        displayed_name="default",
         email=user.email,
         created_time=datetime.now(timezone.utc),
         updated_time=datetime.now(timezone.utc)

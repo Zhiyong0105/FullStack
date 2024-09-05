@@ -7,7 +7,6 @@
 
 
 import SwiftUI
-
 struct Signin: View {
     @State var isActive = false
     @State var email = ""
@@ -15,6 +14,8 @@ struct Signin: View {
     @State var showButton = false
     @State var Viewclose = false
     @Binding var showSignin : Bool
+    @StateObject private var viewModel = UserView()
+
 
     var body: some View {
         VStack(spacing:60){
@@ -37,13 +38,15 @@ struct Signin: View {
                         .padding([.leading, .trailing], 30)
 
                     // Email Field
-                    InfoView(title: "Email", text: $email)
+                    InfoView(title: "Email", text: $viewModel.email)
                     
                     // Password Field
                     PassowordView(title: "Password", text: $password)
                     
                     // Sign In Button
-                    SiginButton(isSiginButton: $showButton)
+                    SiginButton(action: {
+                        viewModel.createUser()
+                    })
                     
                     // Social Login Options
                     OrView(title: "or")
@@ -85,7 +88,6 @@ struct InfoView: View {
     var title: String
     @Binding var text: String
     @FocusState private var isActive: Bool
-    
     var body: some View {
         ZStack(alignment: .leading) {
             TextField("", text: $text)
@@ -176,12 +178,16 @@ struct OrView:View {
     }
 }
 struct SiginButton: View {
-    @Binding var isSiginButton: Bool
+//    @Binding var isSiginButton: Bool
+    let action: () -> Void
     
     var body: some View {
-        Button {
-            isSiginButton.toggle()
-        } label: {
+//        Button {
+//            isSiginButton.toggle()
+//        } label: {
+//            
+//        }
+        Button(action: action, label: {
             Text("Sign In")
                 .foregroundColor(.white)
                 .font(.title2.bold())
@@ -189,7 +195,7 @@ struct SiginButton: View {
                 .background(Color.red.opacity(0.7))
                 .cornerRadius(15)
                 .padding(.horizontal)
-        }
+        })
     }
 }
 
@@ -214,6 +220,8 @@ struct SignAccount: View {
         }
     }
 }
+
+
 
 #Preview {
    HomeView()

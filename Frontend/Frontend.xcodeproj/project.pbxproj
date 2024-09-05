@@ -16,6 +16,7 @@
 		6B08E48C2C85847800AE249C /* FrontendUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08E48B2C85847800AE249C /* FrontendUITestsLaunchTests.swift */; };
 		6B08E4992C8584CE00AE249C /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08E4982C8584CE00AE249C /* Signin.swift */; };
 		6B08E49B2C869E6E00AE249C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08E49A2C869E6E00AE249C /* HomeView.swift */; };
+		6B83D99A2C8947C0008DE5DF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83D9992C8947C0008DE5DF /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		6B08E48B2C85847800AE249C /* FrontendUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6B08E4982C8584CE00AE249C /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
 		6B08E49A2C869E6E00AE249C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6B83D9992C8947C0008DE5DF /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				6B08E46E2C85847400AE249C /* FrontendApp.swift */,
 				6B08E4702C85847400AE249C /* ContentView.swift */,
 				6B08E4982C8584CE00AE249C /* Signin.swift */,
+				6B83D9992C8947C0008DE5DF /* UserViewModel.swift */,
 				6B08E49A2C869E6E00AE249C /* HomeView.swift */,
 				6B08E4722C85847800AE249C /* Assets.xcassets */,
 				6B08E4742C85847800AE249C /* Preview Content */,
@@ -266,6 +269,7 @@
 				6B08E4712C85847400AE249C /* ContentView.swift in Sources */,
 				6B08E49B2C869E6E00AE249C /* HomeView.swift in Sources */,
 				6B08E46F2C85847400AE249C /* FrontendApp.swift in Sources */,
+				6B83D99A2C8947C0008DE5DF /* UserViewModel.swift in Sources */,
 				6B08E4992C8584CE00AE249C /* Signin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
