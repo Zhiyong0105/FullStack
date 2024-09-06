@@ -1,22 +1,40 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from app.crud import crud
+from app.crud.crud import creat_user, get_by_email
 from app.schemas import schemas
 from app.dependencies import get_db
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from app.auth import authenticate_user, create_access_token, get_current_user
+from typing import Annotated
 
-# 创建一个路由实例
+
 router = APIRouter()
 
-# 定义一个获取用户列表的路由
+# oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login/")
 
 
-@router.get("/users/", response_model=list[schemas.User])
-def read_users(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    users = crud.get_users(db, skip=skip, limit=limit)
+@router.post("/users/", response_model=schemas.User)
+def creat_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    users = creat_user(db=db, user=user)
     return users
 
 
-@router.post("/users/",response_model=schemas.User)
-def creat_user(user:schemas.UserCreate,db:Session = Depends(get_db)):
-    users = crud.creat_user(db=db,user=user)
-    return users
+@router.post("/login/", response_model=schemas.Token)
+async def login_for_access_token(
+    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
+    db: Annotated[Session, Depends(get_db)]
+) -> schemas.Token:
+    user = authenticate_user(db, form_data.username, form_data.password)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect username or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    access_token = create_access_token(data={"sub": user.email})
+    return schemas.Token(access_token=access_token, token_type="bearer")
+
+
+@router.get("/users/me/", response_model=schemas.User)
+async def read_users_me(current_user: schemas.User = Depends(get_current_user)):
+    return current_user

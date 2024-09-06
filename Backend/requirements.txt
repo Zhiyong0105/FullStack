@@ -6,3 +6,8 @@ alembic
 fastapi-admin
 sqladmin
 pydantic[email]
+
+# JWT
+pyjwt
+passlib[bcrypt]
+

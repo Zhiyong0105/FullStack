@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Optional
 
 
 
@@ -20,3 +21,10 @@ class User(UserBase):
 
     class Config:
         orm_mode = True  # 允许将 ORM 模型转换为 Pydantic 模型
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+   email: Optional[str] = None

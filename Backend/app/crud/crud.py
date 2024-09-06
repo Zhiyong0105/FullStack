@@ -16,3 +16,6 @@ def creat_user(db: Session, user: schemas.UserCreate):
     db.commit()
     db.refresh(new_user)
     return new_user
+
+def get_by_email(db:Session,user:schemas.UserCreate):
+    return user
