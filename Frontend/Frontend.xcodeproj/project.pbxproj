@@ -17,6 +17,9 @@
 		6B08E4992C8584CE00AE249C /* Signin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08E4982C8584CE00AE249C /* Signin.swift */; };
 		6B08E49B2C869E6E00AE249C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B08E49A2C869E6E00AE249C /* HomeView.swift */; };
 		6B83D99A2C8947C0008DE5DF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83D9992C8947C0008DE5DF /* UserViewModel.swift */; };
+		6B83D99C2C8DD36A008DE5DF /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83D99B2C8DD36A008DE5DF /* RegisterView.swift */; };
+		6B83D99E2C8DDE28008DE5DF /* Signin_backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83D99D2C8DDE28008DE5DF /* Signin_backend.swift */; };
+		6B83D9A02C8DDE55008DE5DF /* Signup_backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83D99F2C8DDE55008DE5DF /* Signup_backend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		6B08E4982C8584CE00AE249C /* Signin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin.swift; sourceTree = "<group>"; };
 		6B08E49A2C869E6E00AE249C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6B83D9992C8947C0008DE5DF /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		6B83D99B2C8DD36A008DE5DF /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		6B83D99D2C8DDE28008DE5DF /* Signin_backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin_backend.swift; sourceTree = "<group>"; };
+		6B83D99F2C8DDE55008DE5DF /* Signup_backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup_backend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +109,10 @@
 				6B08E46E2C85847400AE249C /* FrontendApp.swift */,
 				6B08E4702C85847400AE249C /* ContentView.swift */,
 				6B08E4982C8584CE00AE249C /* Signin.swift */,
+				6B83D99B2C8DD36A008DE5DF /* RegisterView.swift */,
 				6B83D9992C8947C0008DE5DF /* UserViewModel.swift */,
+				6B83D99D2C8DDE28008DE5DF /* Signin_backend.swift */,
+				6B83D99F2C8DDE55008DE5DF /* Signup_backend.swift */,
 				6B08E49A2C869E6E00AE249C /* HomeView.swift */,
 				6B08E4722C85847800AE249C /* Assets.xcassets */,
 				6B08E4742C85847800AE249C /* Preview Content */,
@@ -266,9 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B83D99E2C8DDE28008DE5DF /* Signin_backend.swift in Sources */,
 				6B08E4712C85847400AE249C /* ContentView.swift in Sources */,
 				6B08E49B2C869E6E00AE249C /* HomeView.swift in Sources */,
 				6B08E46F2C85847400AE249C /* FrontendApp.swift in Sources */,
+				6B83D9A02C8DDE55008DE5DF /* Signup_backend.swift in Sources */,
+				6B83D99C2C8DD36A008DE5DF /* RegisterView.swift in Sources */,
 				6B83D99A2C8947C0008DE5DF /* UserViewModel.swift in Sources */,
 				6B08E4992C8584CE00AE249C /* Signin.swift in Sources */,
 			);

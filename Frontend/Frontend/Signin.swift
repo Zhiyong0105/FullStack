@@ -56,10 +56,12 @@ struct Signin: View {
                         SignAccount(image: "globe", width: 32, height: 32, action: {})
                     }
                     .padding(.bottom, 20)
+                    Text("Register")
+                    
                    
                 }
                 .padding(30)
-                
+
 
             }
             .frame(width: 300,height: 500)
@@ -157,7 +159,9 @@ struct PassowordView: View {
                         .padding(.trailing, 10)
                         .foregroundColor(.secondary)
                 }
+
             }
+
         }
     }
 }

@@ -13,8 +13,8 @@ router = APIRouter()
 # oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login/")
 
 
-@router.post("/users/", response_model=schemas.User)
-def creat_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+@router.post("/register/", response_model=schemas.User)
+def creat_user_route(user: schemas.UserCreate, db: Session = Depends(get_db)):
     users = creat_user(db=db, user=user)
     return users
 

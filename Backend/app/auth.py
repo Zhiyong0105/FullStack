@@ -33,9 +33,9 @@ def authenticate_user(db, email: str, password: str):
     user = get_by_email(db, email)
     if not user:
         return False
-    if not verify_password(password,user.password):
+    if not verify_password(password,user.hashed_password):
         return False
-    return True
+    return user
 
 
 def create_access_token(data: dict, expires_delta: timedelta | None = None):
