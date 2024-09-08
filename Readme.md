@@ -18,3 +18,8 @@ ls `docker exec -it <container name> bash`
 `alembic revision --autogenerate -m ""`
 
 `alembic upgrade head`
+
+## Sep 8
+* Frontend
+    - complete signup view
+    - request connect to backend
