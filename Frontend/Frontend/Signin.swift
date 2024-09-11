@@ -25,7 +25,7 @@ struct Signin: View {
                     .fill(Color.white)
     //                .shadow(color: .green.opacity(0.2), radius: 10, x: 0, y: 5)
 
-                VStack(spacing: 20) {
+                VStack(spacing: 10) {
                     // Title
                     Text("Sign in")
                         .font(.largeTitle.bold())

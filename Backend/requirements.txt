@@ -10,4 +10,4 @@ pydantic[email]
 # JWT
 pyjwt
 passlib[bcrypt]
-
+bcrypt

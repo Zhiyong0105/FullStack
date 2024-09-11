@@ -16,7 +16,7 @@ struct RegisterView: View {
     @State private var showMessage = false
     @State private var message = ""
     @StateObject private var SignUpModel = UserSignUp()
-
+    @State private var errorMessage: String?
 
     var body: some View {
         VStack(spacing: 30, content: {
@@ -33,9 +33,22 @@ struct RegisterView: View {
             
             PassowordView(title: "ConfirmPassword", text: $confirmPassword)
             
-            SignUpButton(action: {
+            SignUpButton(action:{
                 SignUpModel.UserSignup()
             })
+            if let message = SignUpModel.message {
+                Text(message)
+                    .foregroundColor(.green)
+            }
+
+            // 显示错误信息
+            if let errorMessage = SignUpModel.errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+            }
+
+            
+
 
             
             

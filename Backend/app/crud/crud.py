@@ -3,6 +3,7 @@ from app.models.models import User
 from app.schemas import schemas
 from datetime import datetime, timezone
 from passlib.context import CryptContext
+from fastapi import HTTPException
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -17,6 +18,9 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 def creat_user(db: Session, user: schemas.UserCreate):
     hashed_password = get_password_hash(user.password)
+    existing_user = get_by_email(db,user.email)
+    if existing_user:
+         raise HTTPException(status_code=400, detail="Email already registered")
     new_user = User(
         displayed_name=user.displayed_name,
         email=user.email,
