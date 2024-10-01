@@ -23,3 +23,7 @@ ls `docker exec -it <container name> bash`
 * Frontend
     - complete signup view
     - request connect to backend
+
+## Sep 11
+* Frontend
+    - email exist check 
